@@ -22,12 +22,9 @@ class StartPageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentStartPageBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         recyclerView = binding.recyclerView
         recyclerView.adapter = StartPageAdapter(context)
+        return binding.root
     }
 
     override fun onDestroyView() {

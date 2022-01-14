@@ -1,4 +1,4 @@
-package com.gustavozreis.guiabauru.Data
+package com.gustavozreis.guiabauru.data
 
 import com.gustavozreis.guiabauru.R
 import com.gustavozreis.guiabauru.entities.Category

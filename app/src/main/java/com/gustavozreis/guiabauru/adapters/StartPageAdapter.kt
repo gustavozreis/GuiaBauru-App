@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.gustavozreis.guiabauru.Data.CategoriesStartData
+import com.gustavozreis.guiabauru.data.CategoriesStartData
 import com.gustavozreis.guiabauru.R
-import com.gustavozreis.guiabauru.entities.Category
+import com.gustavozreis.guiabauru.databinding.CategoryItemsBinding
 
 class StartPageAdapter(
     private val context: Context?
@@ -18,19 +18,22 @@ class StartPageAdapter(
     // inicializar uma lista das categorias
     val categoriesList = CategoriesStartData.categoriesList
 
-    // inicializar ViewHolder
+    // inicializar ViewHolder maneira antiga
     class StartPageViewHolder(view: View?): RecyclerView.ViewHolder(view!!) {
         val categoryImage: ImageView = view!!.findViewById(R.id.place_image)
         val categoryName: TextView = view!!.findViewById(R.id.text_category)
     }
+    /*class StartPageViewHolder(var binding: CategoryItemsBinding): RecyclerView.ViewHolder(binding.root) {
+        val categoryImage: ImageView = binding.placeImage
+        val categoryName: TextView = binding.textCategory
+    }*/
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): StartPageAdapter.StartPageViewHolder {
-        val adapterLayout: View = LayoutInflater.from(parent.context)
-            .inflate(R.layout.category_items, parent, false)
-        return StartPageViewHolder(adapterLayout)
+        return StartPageViewHolder(LayoutInflater.from(parent.context)
+            .inflate(R.layout.category_items, parent, false))
     }
 
     override fun onBindViewHolder(holder: StartPageAdapter.StartPageViewHolder, position: Int) {
