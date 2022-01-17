@@ -2,11 +2,12 @@ package com.gustavozreis.guiabauru.entities
 
 import androidx.annotation.DrawableRes
 
-class Estabelecimentos (
+class Estabelecimento(
+    val id: Int,
     val name: String,
-    val category: String,
+    val keywords: MutableList<String>,
     @DrawableRes val image: Int,
     val description: String,
     val localization: String
-        ) {
+) {
 }

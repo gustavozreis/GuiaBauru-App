@@ -6,10 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.gustavozreis.guiabauru.data.CategoriesStartData
 import com.gustavozreis.guiabauru.R
-import com.gustavozreis.guiabauru.databinding.CategoryItemsBinding
+import com.gustavozreis.guiabauru.data.CategoriesStartData
+import androidx.navigation.fragment.findNavController
+import com.gustavozreis.guiabauru.MainActivity
 
 class StartPageAdapter(
     private val context: Context?
@@ -22,6 +26,7 @@ class StartPageAdapter(
     class StartPageViewHolder(view: View?): RecyclerView.ViewHolder(view!!) {
         val categoryImage: ImageView = view!!.findViewById(R.id.place_image)
         val categoryName: TextView = view!!.findViewById(R.id.text_category)
+        val cardView: View = view!!.findViewById(R.id.list_cardview)
     }
     /*class StartPageViewHolder(var binding: CategoryItemsBinding): RecyclerView.ViewHolder(binding.root) {
         val categoryImage: ImageView = binding.placeImage
@@ -43,6 +48,10 @@ class StartPageAdapter(
         holder.categoryImage.setImageResource(categoryIndex.categoryImg)
         // seta o nome da categoria
         holder.categoryName.text = categoryIndex.categoryType
+        // TODO: setar mudança de fragmento ao clicar
+        holder.cardView.setOnClickListener {
+            holder.cardView.findNavController().navigate(R.id.action_startPageFragment_to_categoryFragment)
+        }
     }
 
     override fun getItemCount(): Int = categoriesList.size

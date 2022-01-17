@@ -14,7 +14,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context="com.gustavozreis.guiabauru.StartPageFragment">
+        tools:context="com.gustavozreis.guiabauru.pages.StartPageFragment">
 
 
         <ImageView

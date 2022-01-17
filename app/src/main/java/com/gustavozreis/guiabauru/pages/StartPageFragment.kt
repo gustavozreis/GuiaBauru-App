@@ -1,4 +1,4 @@
-package com.gustavozreis.guiabauru
+package com.gustavozreis.guiabauru.pages
 
 import android.os.Bundle
 import android.view.LayoutInflater

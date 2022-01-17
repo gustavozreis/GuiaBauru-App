@@ -6,6 +6,22 @@
 
     <fragment
         android:id="@+id/startPageFragment"
-        android:name="com.gustavozreis.guiabauru.StartPageFragment"
-        android:label="Guia Bauru" />
+        android:name="com.gustavozreis.guiabauru.pages.StartPageFragment"
+        android:label="Guia Bauru" >
+        <action
+            android:id="@+id/action_startPageFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.gustavozreis.guiabauru.pages.CategoryFragment"
+        android:label="CategoryFragment" >
+        <action
+            android:id="@+id/action_categoryFragment_to_estabelecimentosFragment"
+            app:destination="@id/estabelecimentosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/estabelecimentosFragment"
+        android:name="com.gustavozreis.guiabauru.pages.EstabelecimentosFragment"
+        android:label="EstabelecimentosFragment" />
 </navigation>
