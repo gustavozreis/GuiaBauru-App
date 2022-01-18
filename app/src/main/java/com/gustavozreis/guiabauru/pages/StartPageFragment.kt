@@ -11,7 +11,7 @@ import com.gustavozreis.guiabauru.databinding.FragmentStartPageBinding
 
 class StartPageFragment : Fragment() {
 
-    // instancia do objeto corresponde ao fragment_start_page.xml
+    // vinculação de visualização
     private var _binding: FragmentStartPageBinding? = null
     private val binding get() = _binding!!
     private lateinit var recyclerView: RecyclerView

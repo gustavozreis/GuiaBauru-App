@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_categoryFragment_to_estabelecimentosFragment"
             app:destination="@id/estabelecimentosFragment" />
+        <argument
+            android:name="category"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/estabelecimentosFragment"

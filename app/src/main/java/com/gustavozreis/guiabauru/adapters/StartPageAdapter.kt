@@ -14,6 +14,8 @@ import com.gustavozreis.guiabauru.R
 import com.gustavozreis.guiabauru.data.CategoriesStartData
 import androidx.navigation.fragment.findNavController
 import com.gustavozreis.guiabauru.MainActivity
+import com.gustavozreis.guiabauru.pages.StartPageFragment
+import com.gustavozreis.guiabauru.pages.StartPageFragmentDirections
 
 class StartPageAdapter(
     private val context: Context?
@@ -48,9 +50,11 @@ class StartPageAdapter(
         holder.categoryImage.setImageResource(categoryIndex.categoryImg)
         // seta o nome da categoria
         holder.categoryName.text = categoryIndex.categoryType
-        // TODO: setar mudança de fragmento ao clicar
+        // setar mudança de fragmento ao clicar
         holder.cardView.setOnClickListener {
-            holder.cardView.findNavController().navigate(R.id.action_startPageFragment_to_categoryFragment)
+            val action = StartPageFragmentDirections.actionStartPageFragmentToCategoryFragment(holder.categoryName.text.toString())
+            holder.cardView.findNavController().navigate(action)
+            //holder.cardView.findNavController().navigate(R.id.action_startPageFragment_to_categoryFragment(category = "oi"))
         }
     }
 
