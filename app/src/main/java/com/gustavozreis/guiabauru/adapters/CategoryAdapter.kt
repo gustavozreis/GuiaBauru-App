@@ -6,70 +6,61 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.gustavozreis.guiabauru.R
-import com.gustavozreis.guiabauru.data.EstabelecimentosData
-import com.gustavozreis.guiabauru.entities.Estabelecimento
+import com.gustavozreis.guiabauru.data.CategoriesStartData
+import com.gustavozreis.guiabauru.pages.CategoryFragmentDirections
+
+/*
+
+Esse adaptador vai pegar as categorias que fazem parte do "CategoriesStarData"
+e criar uma lista automática. Qualquer adição de uma nova categoria será
+automáticamente adicionada a lista na criação do fragmento
+
+*/
 
 class CategoryAdapter(
-    private val category: String,
     private val context: Context?
-) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
+) : RecyclerView.Adapter<CategoryAdapter.StartPageViewHolder>() {
 
-    // instancia listas a partir dos dados dos estabelecimentos
-    private var estabelecimentoList: List<Estabelecimento> =
-        EstabelecimentosData.estabelecimentosList
-    private var categoriaList: List<String> = listOf()
-
-    // função que filtra a lista de estabelecimentos pelas keywords
-    private fun createList() {
-        var categoriasPlaceHolder: MutableSet<String> = mutableSetOf()
-        for (estabelecimento in estabelecimentoList) {
-            if (estabelecimento.keywords.contains(category))
-                categoriasPlaceHolder.addAll(estabelecimento.keywords)
-        }
-        categoriaList = categoriasPlaceHolder.filterNot {it.contains(category)}
-    }
-
-    init {
-        createList()
-    }
+    // inicializar uma lista das categorias
+    val categoriesList = CategoriesStartData.categoriesList
 
     // inicializar ViewHolder
-    class CategoryViewHolder(view: View?) : RecyclerView.ViewHolder(view!!) {
-        //val image: ImageView = view!!.findViewById(R.id.image)
-        val name: TextView = view!!.findViewById(R.id.name)
-        val cardView: CardView = view!!.findViewById(R.id.estabelecimento_cardview)
-
+    class StartPageViewHolder(view: View?) : RecyclerView.ViewHolder(view!!) {
+        val categoryImage: ImageView = view!!.findViewById(R.id.place_image)
+        val categoryName: TextView = view!!.findViewById(R.id.text_category)
+        val cardView: View = view!!.findViewById(R.id.list_cardview)
     }
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): CategoryAdapter.CategoryViewHolder {
-        return CategoryAdapter.CategoryViewHolder(
+    ): CategoryAdapter.StartPageViewHolder {
+        return StartPageViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.estabelecimento_item, parent, false)
+                .inflate(R.layout.category_items, parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: CategoryAdapter.CategoryViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CategoryAdapter.StartPageViewHolder, position: Int) {
         // pega o dado na posição atual na lista
-        val estabelecimentoIndex: String = categoriaList[position]
-        // seta a imagem do card do estabelecimento
-        //holder.image.setImageResource(estabelecimentoIndex.image)
-        // seta o nome do estabelecimento
-        holder.name.text = estabelecimentoIndex
+        val categoryIndex = categoriesList[position]
+        // seta a imagem do card da categoria
+        holder.categoryImage.setImageResource(categoryIndex.categoryImg)
+        // seta o nome da categoria
+        holder.categoryName.text = categoryIndex.categoryType
         // setar mudança de fragmento ao clicar
         holder.cardView.setOnClickListener {
-            holder.cardView.findNavController()
-                .navigate(R.id.action_categoryFragment_to_estabelecimentosFragment)
+            val action =
+                CategoryFragmentDirections.actionStartPageFragmentToCategoryFragment(holder.categoryName.text.toString())
+            holder.cardView.findNavController().navigate(action)
         }
     }
 
-    override fun getItemCount(): Int = categoriaList.size
-
+    override fun getItemCount(): Int = categoriesList.size
 
 }
+
+

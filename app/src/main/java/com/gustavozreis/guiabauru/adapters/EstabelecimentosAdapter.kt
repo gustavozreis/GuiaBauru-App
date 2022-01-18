@@ -13,22 +13,30 @@ import com.gustavozreis.guiabauru.R
 import com.gustavozreis.guiabauru.data.EstabelecimentosData
 import com.gustavozreis.guiabauru.entities.Estabelecimento
 
+/*
+
+Esse adaptador lista os estabelecimentos que tem a keyword escolhida
+dentro as subcategorias do fragmento [SubCategoryFragment]
+
+*/
+
 class EstabelecimentosAdapter(
-    private val category: String,
+    private val subCategory: String,
     private val context: Context?
 ) : RecyclerView.Adapter<EstabelecimentosAdapter.EstabelecimentosViewHolder>() {
 
-    // instancia listas a partir dos dados dos estabelecimentos
+    // instancia listas a partir da keyword da lista de estabelecimentos
     private var estabelecimentoList: List<Estabelecimento> =
         EstabelecimentosData.estabelecimentosList
-    private var categoriaList: MutableList<Estabelecimento> = mutableListOf()
+    private var estabCategoriaList: MutableList<Estabelecimento> = mutableListOf()
 
-    // função que filtra a lista de estabelecimentos pelas keywords
+    // função que cria a lista de estabelecimentos seguindo a subcategoria escolhida
     private fun createList() {
         for (estabelecimento in estabelecimentoList) {
-            if (estabelecimento.keywords.contains(category))
-                categoriaList.add(estabelecimento)
+            if (estabelecimento.keywords.contains(subCategory))
+                estabCategoriaList.add(estabelecimento)
         }
+
     }
 
     init {
@@ -55,19 +63,19 @@ class EstabelecimentosAdapter(
 
     override fun onBindViewHolder(holder: EstabelecimentosAdapter.EstabelecimentosViewHolder, position: Int) {
         // pega o dado na posição atual na lista
-        val estabelecimentoIndex = categoriaList[position]
+        val estabelecimentoIndex = estabCategoriaList[position]
         // seta a imagem do card do estabelecimento
         holder.image.setImageResource(estabelecimentoIndex.image)
-        // seta o nome do estabelecimento
+        // seta o nome da subcategoria
         holder.name.text = estabelecimentoIndex.name
         // setar mudança de fragmento ao clicar
-        holder.cardView.setOnClickListener {
-            holder.cardView.findNavController()
-                .navigate(R.id.action_categoryFragment_to_estabelecimentosFragment)
-        }
+        //holder.cardView.setOnClickListener {
+        //    holder.cardView.findNavController()
+        //        .navigate(R.id.action_categoryFragment_to_estabelecimentosFragment)
+        //}
     }
 
-    override fun getItemCount(): Int = categoriaList.size
+    override fun getItemCount(): Int = estabCategoriaList.size
 
 
 }

@@ -4,6 +4,14 @@ import androidx.annotation.DrawableRes
 import com.gustavozreis.guiabauru.R
 import com.gustavozreis.guiabauru.entities.Estabelecimento
 
+/*
+
+Essa classe de objetos contém todos os estabelecimentos que serão utilizados no app.
+Dentro das keywords é obrigatório conter uma e somente uma das keywords que definem
+as categorias em [CategoriesStartData]
+
+ */
+
 object EstabelecimentosData {
     var estabelecimentosList: List<Estabelecimento> = listOf(
         Estabelecimento(
