@@ -7,20 +7,24 @@ object CategoriesStartData {
     val categoriesList: List<Category> = listOf(
         Category(
             categoryImg = R.drawable.guia_bauru_categoria_gastronomia,
-            categoryType = "Gastronomia"
+            categoryType = "Restaurantes"
                 ),
         Category(
             categoryImg = R.drawable.guia_bauru_categoria_gastronomia,
-            categoryType = "Vida Noturna"
+            categoryType = "Supermercados"
                 ),
         Category(
             categoryImg = R.drawable.guia_bauru_categoria_gastronomia,
-            categoryType = "Turismo"
+            categoryType = "Cafés"
             ),
         Category(
             categoryImg = R.drawable.guia_bauru_categoria_gastronomia,
-            categoryType = "Esportes"
-        )
+            categoryType = "Vida Noturna"
+        ),
+        Category(
+            categoryImg = R.drawable.guia_bauru_categoria_gastronomia,
+            categoryType = "Turismo"
+    )
 
     )
 }
