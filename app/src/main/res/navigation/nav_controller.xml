@@ -25,10 +25,21 @@
     </fragment>
     <fragment
         android:id="@+id/estabelecimentosFragment"
-        android:name="com.gustavozreis.guiabauru.pages.EstabelecimentosFragment"
+        android:name="com.gustavozreis.guiabauru.pages.EstabelecimentosListFragment"
         android:label="EstabelecimentosFragment" >
         <argument
             android:name="subCategory"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_estabelecimentosFragment_to_estabelecimentoDetaisFragment"
+            app:destination="@id/estabelecimentoDetaisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/estabelecimentoDetaisFragment"
+        android:name="com.gustavozreis.guiabauru.pages.EstabelecimentoDetailsFragment"
+        android:label="EstabelecimentoDetaisFragment" >
+        <argument
+            android:name="id"
             app:argType="string" />
     </fragment>
 </navigation>

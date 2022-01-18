@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gustavozreis.guiabauru.R
 import com.gustavozreis.guiabauru.data.EstabelecimentosData
 import com.gustavozreis.guiabauru.entities.Estabelecimento
-import com.gustavozreis.guiabauru.pages.CategoryFragmentDirections
 import com.gustavozreis.guiabauru.pages.SubCategoryFragmentDirections
 
 /*
@@ -60,7 +59,7 @@ class SubCategoryAdapter(
     ): SubCategoryAdapter.SubCategoryViewHolder {
         return SubCategoryAdapter.SubCategoryViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.estabelecimento_item, parent, false)
+                .inflate(R.layout.estabelecimento_list, parent, false)
         )
     }
 
@@ -74,7 +73,9 @@ class SubCategoryAdapter(
         // setar mudança de fragmento ao clicar
         holder.cardView.setOnClickListener {
             val action =
-                SubCategoryFragmentDirections.actionSubCategoryFragmentToEstabelecimentosFragment(holder.name.text.toString())
+                SubCategoryFragmentDirections.actionSubCategoryFragmentToEstabelecimentosFragment(
+                    holder.name.text.toString()
+                )
             holder.cardView.findNavController().navigate(action)
         }
     }

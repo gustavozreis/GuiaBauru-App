@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gustavozreis.guiabauru.R
 import com.gustavozreis.guiabauru.data.EstabelecimentosData
 import com.gustavozreis.guiabauru.entities.Estabelecimento
+import com.gustavozreis.guiabauru.pages.EstabelecimentosListFragmentDirections
+import com.gustavozreis.guiabauru.pages.SubCategoryFragmentDirections
 
 /*
 
@@ -57,11 +59,14 @@ class EstabelecimentosAdapter(
     ): EstabelecimentosAdapter.EstabelecimentosViewHolder {
         return EstabelecimentosAdapter.EstabelecimentosViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.estabelecimento_item, parent, false)
+                .inflate(R.layout.estabelecimento_list, parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: EstabelecimentosAdapter.EstabelecimentosViewHolder, position: Int) {
+    override fun onBindViewHolder(
+        holder: EstabelecimentosAdapter.EstabelecimentosViewHolder,
+        position: Int
+    ) {
         // pega o dado na posição atual na lista
         val estabelecimentoIndex = estabCategoriaList[position]
         // seta a imagem do card do estabelecimento
@@ -69,10 +74,13 @@ class EstabelecimentosAdapter(
         // seta o nome da subcategoria
         holder.name.text = estabelecimentoIndex.name
         // setar mudança de fragmento ao clicar
-        //holder.cardView.setOnClickListener {
-        //    holder.cardView.findNavController()
-        //        .navigate(R.id.action_categoryFragment_to_estabelecimentosFragment)
-        //}
+        holder.cardView.setOnClickListener {
+            val action =
+                EstabelecimentosListFragmentDirections.actionEstabelecimentosFragmentToEstabelecimentoDetaisFragment(
+                    estabelecimentoIndex.id.toString()
+                )
+            holder.cardView.findNavController().navigate(action)
+        }
     }
 
     override fun getItemCount(): Int = estabCategoriaList.size

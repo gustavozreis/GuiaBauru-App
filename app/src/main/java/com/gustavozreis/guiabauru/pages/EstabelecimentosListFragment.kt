@@ -11,7 +11,7 @@ import com.gustavozreis.guiabauru.adapters.SubCategoryAdapter
 import com.gustavozreis.guiabauru.databinding.FragmentCategoryBinding
 import com.gustavozreis.guiabauru.databinding.FragmentEstabelecimentosBinding
 
-class EstabelecimentosFragment : Fragment() {
+class EstabelecimentosListFragment : Fragment() {
 
     // argumento vindo do fragmento das categorias
     private var subCategory: String = ""
