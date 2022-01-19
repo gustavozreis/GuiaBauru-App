@@ -37,7 +37,7 @@
             android:fontFamily="sans-serif-thin"
             android:text="TextView"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@color/black"
+            android:textColor="@color/secondaryDarkColor"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

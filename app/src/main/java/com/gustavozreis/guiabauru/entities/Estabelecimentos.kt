@@ -8,6 +8,6 @@ class Estabelecimento(
     val keywords: MutableList<String>,
     @DrawableRes val image: Int,
     val description: String,
-    val localization: String
+    val location: String
 ) {
 }

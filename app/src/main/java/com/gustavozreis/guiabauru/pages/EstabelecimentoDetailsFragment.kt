@@ -52,6 +52,9 @@ class EstabelecimentoDetailsFragment : Fragment() {
         getEstabelecimentoByID()
         binding.image.setImageResource(R.drawable.guia_bauru_categoria_gastronomia)
         binding.name.text = estabelecimentosFilteredById[0].name
+        binding.description.text = estabelecimentosFilteredById[0].description
+        binding.location.text = estabelecimentosFilteredById[0].location
+
     }
 
     override fun onDestroyView() {
