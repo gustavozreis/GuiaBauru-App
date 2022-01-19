@@ -59,7 +59,7 @@ class SubCategoryAdapter(
     ): SubCategoryAdapter.SubCategoryViewHolder {
         return SubCategoryAdapter.SubCategoryViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.estabelecimento_list, parent, false)
+                .inflate(R.layout.subcategory_list, parent, false)
         )
     }
 

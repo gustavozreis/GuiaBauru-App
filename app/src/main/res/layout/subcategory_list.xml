@@ -3,46 +3,34 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list_cardview"
+    android:id="@+id/estabelecimento_cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="12dp"
-    app:cardBackgroundColor="#EBEAEA"
+    app:cardBackgroundColor="@color/primaryLightColor"
     app:cardCornerRadius="20dp"
     app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context="com.gustavozreis.guiabauru.pages.CategoryFragment">
-
-
-        <ImageView
-            android:id="@+id/place_image"
-            android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/guia_bauru_categoria_gastronomia"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        tools:context="com.gustavozreis.guiabauru.pages.SubCategoryFragment">
 
         <TextView
-            android:id="@+id/text_category"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="8dp"
             android:elevation="4dp"
             android:fontFamily="@font/montserrat"
             android:text="TextView"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@color/primaryColor"
-            android:textSize="24sp"
-            android:textStyle="normal"
-            app:layout_constraintBottom_toBottomOf="@+id/place_image"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/secondaryColor"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            tools:text="GASTRONOMIA" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="SKINÃO" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

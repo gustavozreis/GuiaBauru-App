@@ -11,8 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:layout_margin="20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:spanCount="2"
         tools:itemCount="12"
-        tools:listitem="@layout/category_items" />
+        tools:listitem="@layout/subcategory_list"
+        android:background="@color/primaryLightColor"/>
 </FrameLayout>
