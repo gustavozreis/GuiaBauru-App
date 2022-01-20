@@ -15,12 +15,8 @@ object CategoriesStartData {
                 ),
         Category(
             categoryImg = R.drawable.guia_bauru_categoria_gastronomia,
-            categoryType = "Cafés"
-            ),
-        Category(
-            categoryImg = R.drawable.guia_bauru_categoria_gastronomia,
             categoryType = "Vida Noturna"
-        ),
+                ),
         Category(
             categoryImg = R.drawable.guia_bauru_categoria_gastronomia,
             categoryType = "Turismo"

@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_startPageFragment_to_categoryFragment"
             app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_startPageFragment_to_estabelecimentosFragment"
+            app:destination="@id/estabelecimentosFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoryFragment"

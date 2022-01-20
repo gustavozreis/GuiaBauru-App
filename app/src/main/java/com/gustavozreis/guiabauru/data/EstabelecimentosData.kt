@@ -15,9 +15,49 @@ as categorias em [CategoriesStartData]
 object EstabelecimentosData {
     var estabelecimentosList: List<Estabelecimento> = listOf(
         Estabelecimento(
+            id = 14,
+            name = "Fran's Café",
+            keywords = mutableListOf("Restaurantes", "Cafés") ,
+            image = R.drawable.guia_bauru_categoria_gastronomia,
+            description = "Rede de cafeterias tem cafés quentes e frios e menu leve, em ambiente acolhedor e confortável para leitura.",
+            location = "Av. Getúlio Vargas, 6-15"
+        ),
+        Estabelecimento(
+            id = 13,
+            name = "Comanella",
+            keywords = mutableListOf("Restaurantes", "Pizza", "Churrasco", "Brasileira") ,
+            image = R.drawable.guia_bauru_categoria_gastronomia,
+            description = "Marmitex, marmitas fitness e pizzas.",
+            location = "Alameda Dr. Octávio Pinheiro Brisolla, 7-71"
+        ),
+        Estabelecimento(
+            id = 12,
+            name = "Lalai Restaurante",
+            keywords = mutableListOf("Restaurantes", "Brasileira", "Portuguesa") ,
+            image = R.drawable.guia_bauru_categoria_gastronomia,
+            description = "Restaurante a lá carte com pratos contemporâneos e variados.",
+            location = "Av. Nações Unidas, 26 - 19"
+        ),
+        Estabelecimento(
+            id = 11,
+            name = "Lalai Restaurante",
+            keywords = mutableListOf("Restaurantes", "Churrasco", "Brasileira") ,
+            image = R.drawable.guia_bauru_categoria_gastronomia,
+            description = "Restaurante a lá carte com pratos contemporâneos e variados.",
+            location = "Av. Nações Unidas, 26 - 19"
+        ),
+        Estabelecimento(
+            id = 10,
+            name = "Casarão da Picanha",
+            keywords = mutableListOf("Restaurantes", "Churrasco", "Brasileira") ,
+            image = R.drawable.guia_bauru_categoria_gastronomia,
+            description = "Atradição, a qualidade, o atendimento e amizade que conquistamos ao longo de 17 anos na região de Jundiaí, nos deu experiência e competência para expandirmos esse sonho para um novo horizonte, E é com muita expectativa, humildade e perseverança que escolhemos Bauru.",
+            location = "R. Henrique Savi, 11"
+        ),
+        Estabelecimento(
             id = 9,
             name = "Fried Fish Vilarejo",
-            keywords = mutableListOf("Restaurantes", "Brasileira", "Frutos do Mar") ,
+            keywords = mutableListOf("Restaurantes", "Brasileira", "Frutos do Mar", "Nordestino") ,
             image = R.drawable.guia_bauru_categoria_gastronomia,
             description = "Camarões, peixe frito e saladas, além de fritas e cervejas, em espaço informal com mesinhas e música ao vivo.",
             location = "R. José Ruíz Pelegrina, 7-55"
@@ -49,7 +89,7 @@ object EstabelecimentosData {
         Estabelecimento(
             id = 5,
             name = "Skinão",
-            keywords = mutableListOf("Restaurantes", "Fast-Food") ,
+            keywords = mutableListOf("Restaurantes", "Hambúrguer") ,
             image = R.drawable.guia_bauru_categoria_gastronomia,
             description = "Fundado em 1980, o Skinão serve porções, drinks e o mais famoso lanche Bauru da cidade.",
             location = "Av Octávio Pinheiro Brisola, 21-21"
@@ -57,10 +97,11 @@ object EstabelecimentosData {
         Estabelecimento(
             id = 4,
             name = "La Terrase",
-            keywords = mutableListOf("Restaurantes", "Alta Cozinha") ,
+            keywords = mutableListOf("Restaurantes", "Francesa") ,
             image = R.drawable.guia_bauru_categoria_gastronomia,
-            description = "La Terrasse é um restaurante de alto nível com pratos sofisticados.",
-            location = "Rua Lero Lero, 21-21"
+            description = "O La Terrasse é um bistrô de inspiração francesa, que a cada dia ganha destaque na cidade.\n" +
+                    "Com uma decoração charmosa e aconchegante, conta com um serviço diferenciado, oferecendo a seus clientes uma experiência mais do que especial em cada detalhe.",
+            location = "Praça Antônio Padilha Filho, 1-16"
         ),
         Estabelecimento(
             id = 3,
@@ -68,15 +109,15 @@ object EstabelecimentosData {
             keywords = mutableListOf("Vida Noturna", "Balada") ,
             image = R.drawable.guia_bauru_categoria_gastronomia,
             description = "Sampa é uma balada mas também um barzinho.",
-            location = "Av Octávio Pinheiro Brisola, 21-21"
+            location = "R. Antônio Alves, 27-28"
         ),
         Estabelecimento(
             id = 2,
             name = "Parque Vitória Régia",
-            keywords = mutableListOf("Turismo", "Parque") ,
+            keywords = mutableListOf("Turismo", "Parques") ,
             image = R.drawable.guia_bauru_categoria_gastronomia,
             description = "O Parque Vitória Régia é o mais famoso parque de Bauru.",
-            location = "Av. Nações Unidas, 21-21"
+            location = "105, Av. Nações Unidas, 25-25"
         ),
         Estabelecimento(
             id = 1,
